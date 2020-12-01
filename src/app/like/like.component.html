@@ -1,0 +1,4 @@
+<h1>like works!</h1>
+<button class="btn btn-primary like-button" [ngClass]="clicked? 'liked':''" type="submit" (click)="like()">
+    <span class="likes-counter">Like | {{likesCounter}}</span>
+</button>

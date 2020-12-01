@@ -1,0 +1,27 @@
+<!-- <p>upload-content works!</p> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Educational Blog</a>
+  <!-- <button mat-button routerLink="/" routerLinkActive="active">Home</button>   -->
+     <button mat-button  routerLink="/about"  routerLinkActive="active current">About</button>
+     <button mat-button   routerLink="/upload-content" routerLinkActive="active current">upload-content</button>
+     <button mat-button   routerLink="/quiz" routerLinkActive="active current">feedback</button>
+     <button mat-button   routerLink="/home" routerLinkActive="active current">home</button>
+    
+  </nav>
+<form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Topic Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Topic">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Brief About Topic</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Browse</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+  <div>
+    <input type="submit" class="btn btn-primary" value="Upload">
+  </div>
+  </form>

@@ -1,0 +1,17 @@
+body, html {
+    height: 100%;
+  }
+.login{
+    background-image:url("../../assets/images/b.jpg");
+    height:100%; 
+    background-size:cover;
+    width:auto;
+    background-position:center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+  

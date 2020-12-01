@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Educational Blog</a>
+  <!-- <button mat-button routerLink="/" routerLinkActive="active">Home</button>   -->
+     <button mat-button  routerLink="/about"  routerLinkActive="active current">About</button>
+     <button mat-button   routerLink="/upload-content" routerLinkActive="active current">upload-content</button>
+     <button mat-button   routerLink="/quiz" routerLinkActive="active current">feedback</button>
+     <button mat-button   routerLink="/home" routerLinkActive="active current">home</button>
+    
+  </nav>
+  <h1>Feedback-form</h1>
+<form id="feedback" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between stretch" class="feedback" (ngSubmit)="saveFeedback()">
+  <table id="bg" mat-table style="width: 100%;" fxFlex="100%" fxFlex.gt-sm="66%" [dataSource]="questions" class="mat-elevation-z1">
+
+   
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id</th>
+      <td mat-cell *matCellDef="let questions"> {{questions.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="question_name">
+      <th mat-header-cell *matHeaderCellDef> Questions</th>
+      <td mat-cell *matCellDef="let questions"> {{questions.question_name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Ratings">
+      <th mat-header-cell *matHeaderCellDef>Rating</th>
+      <mat-cell mat-cell *matCellDef="let questions">
+        <td>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="option-{{questions.id}}" [(ngModel)]="feedbackValues[questions.id]" id="option-1-question-{{questions.id}}" value="not-satisfied">
+            <label class="form-check-label" for="inlineRadio1">not-satisfied</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  name="option-{{questions.id}}" [(ngModel)]="feedbackValues[questions.id]" id="option-2-question-{{questions.id}}" value="satisfied">
+            <label class="form-check-label" for="inlineRadio2">satisfied</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  name="option-{{questions.id}}" [(ngModel)]="feedbackValues[questions.id]" id="option-3-question-{{questions.id}}" value="very-satisfied" >
+            <label class="form-check-label" for="inlineRadio3">very satisfied</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  name="option-{{questions.id}}" [(ngModel)]="feedbackValues[questions.id]" id="option-4-question-{{questions.id}}" value="excellent" >
+            <label class="form-check-label" for="inlineRadio3">Excellent</label>
+          </div>
+         </td>  
+      </mat-cell>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> 
+  <div class="btn-container">
+    <button type="submit" class="btn btn-success">Submit
+    </button>
+  </div>
+ </form>
